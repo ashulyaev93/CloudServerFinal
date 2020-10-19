@@ -12,6 +12,7 @@ import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 
+//подключение к каналам сервера и их загрузка;
 public class CloudServer {
     public void run() throws Exception {
         EventLoopGroup mainGroup = new NioEventLoopGroup();

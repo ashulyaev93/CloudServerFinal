@@ -9,6 +9,7 @@ import java.nio.file.Paths;
 
 public class Utils {
     static FileMessage createFileMessage(String fileName, String prefix) throws IOException {
+        //Проверка существования файла;
         Path path = Paths.get(prefix + File.separator + fileName);
         if (!Files.isRegularFile(path)) throw new NoSuchFileException("The file " + fileName + " does not exist in the " + prefix + " directory.");
         return new FileMessage(fileName, prefix, Files.readAllBytes(path));

@@ -10,6 +10,7 @@ public class CloudServerHandler extends ChannelInboundHandlerAdapter {
         System.out.println("Client connected...");
     }
 
+    //здесь происходит чтение запроса клиента;
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         try {
