@@ -8,13 +8,15 @@ import io.netty.handler.codec.serialization.ObjectEncoderOutputStream;
 public class Client {
     public static void main(String[] args) {
 
+        //условие загрузки/скачивания файла;
         if(!args[0].matches("^(upload|download)$")) {
             System.out.println("Only upload and download words are allowed as a first argument");
             System.exit(1);
         }
         
         boolean isUploading = args[0].equals("upload");
-        
+
+        //подключение к серверу и выполнение операции;
         try (Socket socket = new Socket("localhost", 8189)) {
             FileMessage fm = isUploading ? Utils.createFileMessage(args[1], args[0]) : new FileMessage(args[1]);
             ObjectEncoderOutputStream oeos =  new ObjectEncoderOutputStream(socket.getOutputStream());

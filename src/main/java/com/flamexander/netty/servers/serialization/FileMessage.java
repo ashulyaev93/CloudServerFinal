@@ -2,6 +2,7 @@ package com.flamexander.netty.servers.serialization;
 
 import java.io.Serializable;
 
+//класс для отправки файла;
 public class FileMessage  implements Serializable {
     private static final long serialVersionUID = 5193392663743561681L;
 
